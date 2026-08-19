@@ -1,0 +1,228 @@
+---
+// Cookie-Richtlinie
+// ================
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout 
+  title="Cookie-Richtlinie" 
+  description="Cookie-Richtlinie von Grimoire Interactive – Transparenz über alle verwendeten Cookies und Speicher"
+  noIndex={true}
+>
+  <Header slot="header" />
+  
+  <section class="legal animate-on-scroll">
+    <div class="container">
+      <header class="legal__header">
+        <h1 class="legal__title">Cookie-Richtlinie</h1>
+        <div class="legal__meta">
+          <time datetime="2025-01-15">Stand: 15. Januar 2025</time>
+          <span>Version 1.0</span>
+        </div>
+      </header>
+      
+      <article class="legal__content">
+        <section class="legal__section">
+          <h2 class="legal__section-title">1. Zusammenfassung</h2>
+          <p class="legal__section-text">
+            <strong>Diese Website verwendet keine Tracking-Cookies, keine Marketing-Cookies und keine Analyse-Cookies.</strong> Wir respektieren Ihre Privatsphäre. Lediglich technisch notwendige Speicherung erfolgt (siehe unten).
+          </p>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">2. Was sind Cookies?</h2>
+          <p class="legal__section-text">
+            Cookies sind kleine Textdateien, die beim Besuch einer Website auf Ihrem Endgerät gespeichert werden. Sie enthalten Informationen wie Spracheinstellungen, Login-Status oder Tracking-IDs. Cookies können "First-Party" (von der besuchten Seite) oder "Third-Party" (von Dritten wie Google, Facebook) sein.
+          </p>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">3. Kategorien</h2>
+          <p class="legal__section-text">Wir unterscheiden drei Kategorien:</p>
+          <ul class="legal__list">
+            <li><strong>Essentiell:</strong> Technisch zwingend erforderlich (Session, Sicherheit, Consent). Keine Einwilligung nötig (Art. 6 Abs. 1 lit. c/f DSGVO).</li>
+            <li><strong>Funktional:</strong> Komfort-Features (Theme, Sprache). Einwilligung über Banner (Art. 6 Abs. 1 lit. a DSGVO).</li>
+            <li><strong>Analyse/Marketing:</strong> Tracking, Personalisierung, Werbung. <strong>Wir nutzen keine.</strong></li>
+          </ul>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">4. Verwendete Cookies & Speicher (Website)</h2>
+          <p class="legal__section-text">Folgende Speicher kommen auf <code>grimoire-interactive.de</code> zum Einsatz:</p>
+          
+          <table class="cookie-table">
+            <thead>
+              <tr>
+                <th>Name / Key</th>
+                <th>Typ</th>
+                <th>Kategorie</th>
+                <th>Zweck</th>
+                <th>Laufzeit</th>
+                <th>Rechtsgrundlage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>cookie-consent</code></td>
+                <td>Cookie (First-Party)</td>
+                <td>Essentiell</td>
+                <td>Speichert Ihre Cookie-Einwilligung (akzeptiert/abgelehnt/Details)</td>
+                <td>1 Jahr</td>
+                <td>Art. 6 Abs. 1 lit. c DSGVO (rechtliche Verpflichtung)</td>
+              </tr>
+              <tr>
+                <td><code>theme</code></td>
+                <td>Local Storage</td>
+                <td>Funktional</td>
+                <td>Speichert Dark/Light-Mode Präferenz</td>
+                <td>Bis Widerruf</td>
+                <td>Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</td>
+              </tr>
+              <tr>
+                <td><code>language</code></td>
+                <td>Local Storage</td>
+                <td>Funktional</td>
+                <td>Speichert Spracheinstellung (de/en)</td>
+                <td>Bis Widerruf</td>
+                <td>Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</td>
+              </tr>
+              <tr>
+                <td><code>cf_clearance</code></td>
+                <td>Cookie (Cloudflare)</td>
+                <td>Essentiell (Security)</td>
+                <td>Cloudflare WAF Challenge-Bestätigung (Bot-Schutz)</td>
+                <td>Session / 30 Min</td>
+                <td>Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse: Sicherheit)</td>
+              </tr>
+              <tr>
+                <td><code>__cf_bm</code></td>
+                <td>Cookie (Cloudflare)</td>
+                <td>Essentiell (Security)</td>
+                <td>Cloudflare Bot Management Score</td>
+                <td>30 Minuten</td>
+                <td>Art. 6 Abs. 1 lit. f DSGVO</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="legal__highlight">
+            <svg class="legal__highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <div class="legal__highlight-content">
+              <div class="legal__highlight-title">Keine Google Analytics, kein Meta Pixel, kein Matomo, kein Hotjar.</div>
+              Wir tracken <strong>nicht</strong>. Keine Seitenaufrufe, keine Events, keine Heatmaps, keine Session-Recordings.
+            </div>
+          </div>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">5. Speicher in der App (Codex Arcanum)</h2>
+          <p class="legal__section-text">
+            Die App nutzt ausschließlich <strong>lokalen Speicher auf Ihrem Gerät</strong>. Keine Daten werden an unsere Server gesendet.
+          </p>
+          
+          <table class="cookie-table">
+            <thead>
+              <tr>
+                <th>Speicher</th>
+                <th>Inhalt</th>
+                <th>Zweck</th>
+                <th>Löschung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>IndexedDB / LocalStorage</td>
+                <td>Spielstand, Inventar, Einstellungen, Offline-Timestamp</td>
+                <td>Spielfortschritt, Offline-Progression</td>
+                <td>Bei App-Deinstallation / manuell in Einstellungen</td>
+              </tr>
+              <tr>
+                <td>Keychain / Keystore</td>
+                <td>Kauf-Belege (Receipts) für IAP-Validierung</td>
+                <td>Wiederherstellung von Käufen</td>
+                <td>Bei App-Deinstallation</td>
+              </tr>
+              <tr>
+                <td>UserDefaults / SharedPreferences</td>
+                <td>Audio-Einstellungen, Grafik-Qualität, Sprache, Tutorial-Status</td>
+                <td>Komfort</td>
+                <td>Bei App-Deinstallation</td>
+              </tr>
+              <tr>
+                <td>Cloud Save (Optional)</td>
+                <td>Verschlüsseltes Backup des Spielstands</td>
+                <td>Gerätewechsel, Backup</td>
+                <td>Bei Widerruf in App / 90 Tage Inaktivität</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">6. Third-Party Dienste (Embedded Content)</h2>
+          <p class="legal__section-text">
+            Wir betten <strong>keine</strong> Drittinhalte ein (keine YouTube-Videos, keine Twitter-Timelines, keine Discord-Widgets). Links zu Social Media sind einfache <code><a></code>-Tags ohne Tracking-Parameter.
+          </p>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">7. Ihre Steuerungsmöglichkeiten</h2>
+          
+          <h3 class="legal__section-title" style="font-size: 1rem; margin-top: 1rem; margin-bottom: 0.5rem;">Cookie-Banner</h3>
+          <p class="legal__section-text">
+            Beim ersten Besuch erscheint ein Banner. Sie können:
+          </p>
+          <ul class="legal__list">
+            <li><strong>"Alle akzeptieren":</strong> Setzt funktionelle Cookies (Theme, Sprache).</li>
+            <li><strong>"Nur essentiell":</strong> Nur technisch notwendige Cookies.</li>
+            <li><strong>"Einstellungen":</strong> Granulare Auswahl pro Kategorie.</li>
+          </ul>
+          <p class="legal__section-text">
+            Ihre Entscheidung wird in <code>cookie-consent</code> gespeichert. Sie können die Einwilligung jederzeit über den Link "Cookie-Einstellungen" im Footer widerrufen oder ändern.
+          </p>
+          
+          <h3 class="legal__section-title" style="font-size: 1rem; margin-top: 1rem; margin-bottom: 0.5rem;">Browser-Einstellungen</h3>
+          <p class="legal__section-text">
+            Sie können Cookies generell blockieren, beim Schließen löschen oder nur First-Party zulassen. Beachten Sie: Bei Blockierung essentieller Cookies kann die Website nicht korrekt funktionieren.
+          </p>
+          
+          <h3 class="legal__section-title" style="font-size: 1rem; margin-top: 1rem; margin-bottom: 0.5rem;">App-Daten löschen</h3>
+          <p class="legal__section-text">
+            In der App: <strong>Einstellungen → Datenschutz → Alle lokalen Daten löschen</strong>. Dies setzt den Spielstand zurück (nicht rückgängig machbar). Cloud-Save bleibt davon unberührt (separat widerrufbar).
+          </p>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">8. Cloudflare (Hosting & Security)</h2>
+          <p class="legal__section-text">
+            Unsere Website liegt hinter Cloudflare (CDN, WAF, Bot Management). Cloudflare setzt technisch notwendige Cookies (<code>cf_clearance</code>, <code>__cf_bm</code>) für Sicherheitsprüfungen (DDoS-Schutz, Bot-Abwehr). Diese enthalten keine personenbezogenen Daten und sind session-basiert. AVV mit Cloudflare liegt vor. Serverstandort: Frankfurt (EU).
+          </p>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">9. Google Fonts</h2>
+          <p class="legal__section-text">
+            Wir laden Fonts (Cinzel, Inter, JetBrains Mono) via <code>fonts.googleapis.com</code> mit <code>preconnect</code> und <code>crossorigin="anonymous"</code>. Dabei wird Ihre IP an Google übermittelt. Alternative: Fonts sind lokal gehostet möglich. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.
+          </p>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">10. Widerruf & Kontakt</h2>
+          <p class="legal__section-text">
+            Sie können Ihre Einwilligung jederzeit widerrufen: Über den "Cookie-Einstellungen"-Link im Footer, per E-Mail an <a href="mailto:privacy@grimoire-interactive.de" class="legal__contact-link">privacy@grimoire-interactive.de</a> oder durch Löschen der Cookies/LocalStorage in Ihrem Browser.
+          </p>
+        </section>
+      </article>
+      
+      <a href="/" class="legal__back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Zurück zur Startseite
+      </a>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>

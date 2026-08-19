@@ -1,0 +1,47 @@
+// Main Styles Entry Point
+// =======================
+
+@use "variables";
+@use "global";
+@use "components";
+@use "header";
+@use "footer";
+@use "hero";
+@use "game-page";
+@use "legal";
+
+// Print Styles
+@media print {
+  .header,
+  .footer,
+  .hero__scroll,
+  .btn,
+  .skip-link {
+    display: none !important;
+  }
+  
+  .hero,
+  .section,
+  .legal {
+    padding: 1rem 0 !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+  
+  .card,
+  .feature,
+  .stat,
+  .legal__content {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    background: white !important;
+  }
+}

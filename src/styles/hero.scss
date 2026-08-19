@@ -1,0 +1,216 @@
+// Hero Component Styles
+// =====================
+
+@use "variables" as *;
+
+.hero {
+  position: relative;
+  padding: $space-4xl 0;
+  overflow: hidden;
+  @include mq-max-md {
+    padding: $space-3xl 0;
+  }
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 30% 20%, rgba(155, 93, 229, 0.12), transparent),
+    radial-gradient(ellipse 50% 50% at 80% 80%, rgba(212, 168, 67, 0.08), transparent);
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  display: grid;
+  gap: $space-3xl;
+  align-items: center;
+  grid-template-columns: 1fr;
+  @include mq-lg {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.hero__content {
+  text-align: center;
+  @include mq-lg {
+    text-align: left;
+  }
+}
+
+.hero__publisher-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-xs;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $color-gold;
+  margin-bottom: $space-lg;
+}
+
+.hero__publisher-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: $color-gold;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.9); }
+}
+
+.hero__title {
+  @include text-gradient($color-ink, $color-gold);
+  margin-bottom: $space-lg;
+}
+
+.hero__subtitle {
+  font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+  color: $color-ink-dim;
+  max-width: 520px;
+  margin: 0 auto $space-2xl;
+  @include mq-lg {
+    margin-left: 0;
+  }
+}
+
+.hero__cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md;
+  justify-content: center;
+  @include mq-lg {
+    justify-content: flex-start;
+  }
+}
+
+.hero__visual {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  max-width: 520px;
+  margin: 0 auto;
+  @include mq-lg {
+    margin: 0;
+  }
+}
+
+.hero__visual-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: $radius-lg;
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  overflow: hidden;
+  box-shadow: $shadow-lg, $shadow-glow;
+}
+
+.hero__visual-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__visual-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: $space-md;
+  color: $color-ink-muted;
+  padding: $space-xl;
+  text-align: center;
+}
+
+.hero__visual-placeholder svg {
+  width: 80px;
+  height: 80px;
+  opacity: 0.3;
+  color: $color-gold;
+}
+
+.hero__visual-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: $radius-lg;
+  background: linear-gradient(135deg, $color-gold, $color-amethyst);
+  opacity: 0;
+  filter: blur(24px);
+  transition: opacity $transition-slow;
+  z-index: -1;
+}
+
+.hero__visual-frame:hover .hero__visual-glow {
+  opacity: 0.4;
+}
+
+// Trust Indicators
+.hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-lg;
+  justify-content: center;
+  margin-top: $space-2xl;
+  padding-top: $space-xl;
+  border-top: 1px solid $color-border;
+  @include mq-lg {
+    justify-content: flex-start;
+  }
+}
+
+.hero__trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-xs;
+  font-size: 0.8125rem;
+  color: $color-ink-muted;
+}
+
+.hero__trust-value {
+  font-family: $font-heading;
+  font-size: 1.5rem;
+  font-weight: 700;
+  @include text-gradient($color-gold, $color-amethyst);
+  color: $color-gold;
+}
+
+// Scroll Indicator
+.hero__scroll {
+  position: absolute;
+  bottom: $space-xl;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-xs;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $color-ink-muted;
+  opacity: 0.7;
+  animation: bounce 2.5s ease-in-out infinite;
+  @include mq-lg {
+    display: none;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-8px); }
+  60% { transform: translateX(-50%) translateY(-4px); }
+}
+
+.hero__scroll svg {
+  width: 24px;
+  height: 24px;
+}

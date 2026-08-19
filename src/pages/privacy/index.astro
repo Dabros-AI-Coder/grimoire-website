@@ -1,0 +1,186 @@
+---
+// Datenschutzerklärung
+// ====================
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout 
+  title="Datenschutzerklärung" 
+  description="Datenschutzerklärung von Grimoire Interactive – Solo Game Dev Studio"
+  noIndex={true}
+>
+  <Header slot="header" />
+  
+  <section class="legal animate-on-scroll">
+    <div class="container">
+      <header class="legal__header">
+        <h1 class="legal__title">Datenschutzerklärung</h1>
+        <div class="legal__meta">
+          <time datetime="2025-01-15">Stand: 15. Januar 2025</time>
+          <span>Version 1.0</span>
+        </div>
+      </header>
+      
+      <article class="legal__content">
+        <section class="legal__section">
+          <h2 class="legal__section-title">1. Verantwortlicher</h2>
+          <p class="legal__section-text">
+            Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der DSGVO ist:<br><br>
+            <strong>Grimoire Interactive</strong><br>
+            Inhaber: Max Mustermann<br>
+            Musterstraße 123<br>
+            12345 Musterstadt<br>
+            E-Mail: <a href="mailto:privacy@grimoire-interactive.de" class="legal__contact-link">privacy@grimoire-interactive.de</a>
+          </p>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">2. Erhebung und Speicherung personenbezogener Daten</h2>
+          
+          <h3 class="legal__section-title" style="font-size: 1rem; margin-top: 1rem; margin-bottom: 0.5rem;">a) Beim Besuch der Website</h3>
+          <p class="legal__section-text">
+            Bei der bloß informatorischen Nutzung der Website erheben wir nur die personenbezogenen Daten, die Ihr Browser an unseren Server übermittelt (Server-Logfiles). Dies sind:
+          </p>
+          <ul class="legal__list">
+            <li>IP-Adresse (anonymisiert nach 7 Tagen)</li>
+            <li>Datum und Uhrzeit der Anfrage</li>
+            <li>Zeitzonendifferenz zur GMT</li>
+            <li>Inhalt der Anforderung (konkrete Seite)</li>
+            <li>Zugriffsstatus/HTTP-Statuscode</li>
+            <li>Jeweils übertragene Datenmenge</li>
+            <li>Website, von der die Anfrage kommt (Referrer)</li>
+            <li>Browser-Typ und Version</li>
+            <li>Betriebssystem und dessen Oberfläche</li>
+            <li>Sprache und Version der Browsersoftware</li>
+          </ul>
+          <p class="legal__section-text">
+            Rechtsgrundlage ist Art. 6 Abs. 1 S. 1 lit. f DSGVO (berechtigtes Interesse an technisch fehlerfreier Darstellung, Optimierung und Sicherheit). Die Daten werden nach 30 Tagen gelöscht.
+          </p>
+          
+          <h3 class="legal__section-title" style="font-size: 1rem; margin-top: 1rem; margin-bottom: 0.5rem;">b) Bei Kontaktaufnahme per E-Mail</h3>
+          <p class="legal__section-text">
+            Bei Ihrer Kontaktaufnahme mit uns per E-Mail werden die von Ihnen mitgeteilten Daten (E-Mail-Adresse, ggf. Name, Inhalt der Nachricht) zum Zwecke der Bearbeitung Ihrer Anfrage verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 S. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung) bzw. Art. 6 Abs. 1 S. 1 lit. b DSGVO (vorvertragliche Maßnahmen). Die Daten werden gelöscht, sobald sie für den Zweck nicht mehr erforderlich sind.
+          </p>
+          
+          <h3 class="legal__section-title" style="font-size: 1rem; margin-top: 1rem; margin-bottom: 0.5rem;">c) In der App (Codex Arcanum)</h3>
+          <p class="legal__section-text">
+            Unsere App verarbeitet folgende Daten lokal auf Ihrem Gerät (keine Übertragung an uns):
+          </p>
+          <ul class="legal__list">
+            <li>Spielstand (Progress, Inventar, Einstellungen)</li>
+            <li>Geräte-ID (nur für Offline-Progression-Berechnung, wird nicht an Server gesendet)</li>
+            <li>Kaufbelege (nur lokal zur Validierung von In-App-Käufen via Plattform-API)</li>
+          </ul>
+          <div class="legal__highlight">
+            <svg class="legal__highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <div class="legal__highlight-content">
+              <div class="legal__highlight-title">Wichtig: Keine Telemetrie, kein Tracking, keine Accounts</div>
+              Wir erfassen <strong>keine</strong> Spielerdaten auf Servern. Kein Analytics, kein Crash-Reporting, keine Werbe-IDs. Alles läuft lokal auf deinem Gerät.
+            </div>
+          </div>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">3. Cookies & Local Storage</h2>
+          <p class="legal__section-text">
+            Diese Website verwendet <strong>keine</strong> Tracking-Cookies, keine Marketing-Cookies und keine Analyse-Cookies. Lediglich technisch notwendige Speicherung erfolgt:
+          </p>
+          <table class="cookie-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Zweck</th>
+                <th>Speicherdauer</th>
+                <th>Rechtsgrundlage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>cookie-consent</td><td>Speichert Cookie-Einwilligung</td><td>1 Jahr</td><td>Art. 6 Abs. 1 lit. c DSGVO</td></tr>
+              <tr><td>theme</td><td>Speichert Dark/Light-Mode Präferenz</td><td>1 Jahr</td><td>Art. 6 Abs. 1 lit. f DSGVO</td></tr>
+              <tr><td>language</td><td>Speichert Spracheinstellung</td><td>1 Jahr</td><td>Art. 6 Abs. 1 lit. f DSGVO</td></tr>
+            </tbody>
+          </table>
+          <p class="legal__section-text">
+            In der App (Codex Arcanum) wird <strong>Local Storage / IndexedDB</strong> für den Spielstand verwendet. Dies ist technisch zwingend erforderlich (Vertragserfüllung Art. 6 Abs. 1 lit. b DSGVO).
+          </p>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">4. Hosting & CDN (Cloudflare)</h2>
+          <p class="legal__section-text">
+            Diese Website wird über Cloudflare Pages gehostet. Cloudflare verarbeitet als Auftragsverarbeiter (Art. 28 DSGVO) folgende Daten: IP-Adresse (für Security/WAF), Request-Headers, Timing-Daten. Serverstandort: Frankfurt, Deutschland (EU). Cloudflare löscht Logs nach 24h. AVV liegt vor.
+          </p>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">5. Fonts (Google Fonts)</h2>
+          <p class="legal__section-text">
+            Wir nutzen Google Fonts (Cinzel, Inter, JetBrains Mono) über <code>fonts.googleapis.com</code> mit <code>preconnect</code> und <code>crossorigin="anonymous"</code>. Google erhält dabei die IP-Adresse des Besuchers. Google Fonts wird in den USA verarbeitet. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einheitlicher Darstellung). Alternativ: Fonts sind selbst gehostet möglich bei Bedenken.
+          </p>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">6. Social Media Links</h2>
+          <p class="legal__section-text">
+            Unsere Website enthält Links zu Twitter/X, GitHub und Discord. Keine eingebetteten Feeds, keine Like-Buttons, keine Tracking-Pixel. Erst beim Klick verlassen Sie unsere Seite und die Datenschutzrichtlinien des jeweiligen Anbieters gelten.
+          </p>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">7. Ihre Rechte</h2>
+          <p class="legal__section-text">Ihnen stehen folgende Rechte zu:</p>
+          <ul class="legal__list">
+            <li><strong>Auskunftsrecht (Art. 15 DSGVO):</strong> Auskunft über Ihre bei uns gespeicherten Daten.</li>
+            <li><strong>Berichtigung (Art. 16 DSGVO):</strong> Korrektur unrichtiger Daten.</li>
+            <li><strong>Löschung (Art. 17 DSGVO):</strong> Löschung Ihrer Daten (sofern keine Aufbewahrungspflicht).</li>
+            <li><strong>Einschränkung (Art. 18 DSGVO):</strong> Einschränkung der Verarbeitung.</li>
+            <li><strong>Datenübertragbarkeit (Art. 20 DSGVO):</strong> Erhalt Ihrer Daten in strukturiertem Format.</li>
+            <li><strong>Widerspruch (Art. 21 DSGVO):</strong> Widerspruch gegen Verarbeitung aus berechtigtem Interesse.</li>
+            <li><strong>Beschwerde (Art. 77 DSGVO):</strong> Beschwerde bei der Aufsichtsbehörde (z. B. Landesbeauftragter für Datenschutz).</li>
+          </ul>
+          <p class="legal__section-text">
+            Zur Ausübung Ihrer Rechte kontaktieren Sie uns unter <a href="mailto:privacy@grimoire-interactive.de" class="legal__contact-link">privacy@grimoire-interactive.de</a>.
+          </p>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">8. Widerspruchsrecht bei Direktwerbung</h2>
+          <p class="legal__section-text">
+            Wir betreiben <strong>keine</strong> Direktwerbung und kein Profiling. Sollten Sie dennoch Widerspruch einlegen wollen, genügt eine formlose E-Mail.
+          </p>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">9. Datensicherheit</h2>
+          <p class="legal__section-text">
+            Wir verwenden TLS 1.3 (HTTPS) für alle Verbindungen. HSTS, CSP, Referrer-Policy und Permissions-Policy sind konfiguriert. Regelmäßige Security-Updates via Dependabot. Keine Datenbank auf dem Webserver (statische Seite).
+          </p>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">10. Aufbewahrungsfristen</h2>
+          <p class="legal__section-text">
+            Server-Logs: 30 Tage. E-Mail-Korrespondenz: 3 Jahre (steuerrechtlich). Cookie-Consent: 1 Jahr. App-Lokaldaten: Bis zur Deinstallation der App.
+          </p>
+        </section>
+        
+        <section class="legal__section">
+          <h2 class="legal__section-title">11. Änderungen dieser Datenschutzerklärung</h2>
+          <p class="legal__section-text">
+            Wir behalten uns vor, diese Erklärung anzupassen. Die jeweils aktuelle Version finden Sie immer unter <a href="/privacy/" class="legal__contact-link">grimoire-interactive.de/privacy/</a>.
+          </p>
+        </section>
+      </article>
+      
+      <a href="/" class="legal__back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Zurück zur Startseite
+      </a>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>

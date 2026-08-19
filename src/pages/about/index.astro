@@ -1,0 +1,185 @@
+---
+// About Page
+// ==========
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout 
+  title="Über uns – Grimoire Interactive" 
+  description="Solo Game Dev Studio aus Deutschland. Wir erschaffen tiefgründige Idle RPGs mit fairer Monetarisierung und Community-Fokus."
+>
+  <Header slot="header" />
+  
+  <section class="hero animate-on-scroll" aria-labelledby="about-hero-title">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <div class="hero__publisher-tag">Solo Game Dev Studio</div>
+        <h1 id="about-hero-title" class="hero__title">Grimoire Interactive</h1>
+        <p class="hero__subtitle">Wir erschaffen Idle RPGs, die Respekt vor deiner Zeit und deinem Verstand haben.</p>
+        
+        <div class="hero__cta-group">
+          <a href="/codex-arcanum/" class="btn btn--primary btn--lg">
+            <span class="btn__text">Unser Spiel: Codex Arcanum</span>
+            <svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="https://discord.gg/grimoireinteractive" class="btn btn--secondary btn--lg" rel="noopener noreferrer">
+            <span class="btn__text">Discord beitreten</span>
+            <svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.443.747-.698 1.113a18.27 18.27 0 0 0-5.481 0c-.256-.365-.489-.737-.699-1.113a.077.077 0 0 0-.079-.037 19.736 19.736 0 0 0-4.885 1.515.061.061 0 0 0-.031.022c-.939 1.564-1.482 3.433-1.517 3.706a.068.068 0 0 0 .005.103l.055.043c.06.051 4.178 3.546 4.499 3.759.115.076.254.076.369 0 .34-.223 4.547-3.717 4.614-3.774l.055-.043a.068.068 0 0 0 .005-.103c-.043-.359-.614-2.336-1.608-3.99a.061.061 0 0 0-.031-.022zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333 1.007-2.419 2.2-2.419 1.167 0 2.157.967 2.157 2.301 0 1.21-.913 2.419-2.2 2.419zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333 1.007-2.419 2.2-2.419 1.167 0 2.157.967 2.157 2.301 0 1.21-.913 2.419-2.2 2.419z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__visual-frame">
+          <div class="hero__visual-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+            <span>Studio Visual folgt</span>
+          </div>
+          <div class="hero__visual-glow" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section animate-on-scroll" aria-labelledby="philosophy-title">
+    <div class="container">
+      <header class="section__header">
+        <h2 id="philosophy-title" class="section__title">Unsere Philosophie</h2>
+        <p class="section__description">Drei Prinzipien, die jede Entscheidung leiten – vom Game Design bis zum Business Model.</p>
+      </header>
+      
+      <div class="grid">
+        <article class="card animate-on-scroll">
+          <div class="card__content">
+            <div class="card__meta" style="display:flex;gap:.5rem;margin-bottom:.5rem;">
+              <span class="badge badge--emerald">Prinzip 1</span>
+            </div>
+            <h3 class="card__title">Respekt vor deiner Zeit</h3>
+            <p class="card__text">Keine Energy-Systeme, keine Wartezeiten, keine täglichen Pflichten. Du spielst, wann du willst – oder lässt das Spiel für dich laufen. Offline-Progression ist Kern-Feature, nicht Afterthought.</p>
+          </div>
+        </article>
+        
+        <article class="card animate-on-scroll">
+          <div class="card__content">
+            <div class="card__meta" style="display:flex;gap:.5rem;margin-bottom:.5rem;">
+              <span class="badge badge--amethyst">Prinzip 2</span>
+            </div>
+            <h3 class="card__title">Tiefe statt Breite</h3>
+            <p class="card__text">Ein System, das man meistern kann. Theoriecrafting, Build-Vielfalt, Synergien. Keine 50 Währungen, keine verwirrenden Menüs. Alles dient einer klaren Progression.</p>
+          </div>
+        </article>
+        
+        <article class="card animate-on-scroll">
+          <div class="card__content">
+            <div class="card__meta" style="display:flex;gap:.5rem;margin-bottom:.5rem;">
+              <span class="badge">Prinzip 3</span>
+            </div>
+            <h3 class="card__title">Fair Play, Fair Pay</h3>
+            <p class="card__text">Kein Pay-to-Win. Keine Lootboxen. Keine künstlichen Barrieren. Du kaufst das Spiel (oder spielst kostenlos mit vollem Umfang). Kosmetik & Komfort sind optional.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section animate-on-scroll" aria-labelledby="stack-title">
+    <div class="container">
+      <header class="section__header">
+        <h2 id="stack-title" class="section__title">Tech Stack</h2>
+        <p class="section__description">Moderne, wartbare Technologien – gewählt für Solo-Entwicklung und Skalierbarkeit.</p>
+      </header>
+      
+      <div class="grid grid--auto">
+        <article class="card animate-on-scroll">
+          <div class="card__content" style="text-align:center;">
+            <div class="feature__icon" style="margin: 0 auto 1rem;" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <h3 class="feature__title">Game (Mobile)</h3>
+            <p class="feature__text">Godot 4.3+ (C# / .NET 8)<br>Eigenes Idle RPG Framework</p>
+          </div>
+        </article>
+        
+        <article class="card animate-on-scroll">
+          <div class="card__content" style="text-align:center;">
+            <div class="feature__icon" style="margin: 0 auto 1rem;" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            </div>
+            <h3 class="feature__title">Backend / Cloud</h3>
+            <p class="feature__text">Cloudflare (Pages, Workers, R2, D1)<br>Kein eigener Server-Betrieb</p>
+          </div>
+        </article>
+        
+        <article class="card animate-on-scroll">
+          <div class="card__content" style="text-align:center;">
+            <div class="feature__icon" style="margin: 0 auto 1rem;" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+            </div>
+            <h3 class="feature__title">Website</h3>
+            <p class="feature__text">Astro 4 + TypeScript + SCSS<br>Statisch, Cloudflare Pages</p>
+          </div>
+        </article>
+        
+        <article class="card animate-on-scroll">
+          <div class="card__content" style="text-align:center;">
+            <div class="feature__icon" style="margin: 0 auto 1rem;" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 class="feature__title">CI/CD & Tools</h3>
+            <p class="feature__text">GitHub Actions, Dependabot<br>Renovate, Conventional Commits</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section animate-on-scroll" aria-labelledby="team-title">
+    <div class="container">
+      <header class="section__header">
+        <h2 id="team-title" class="section__title">Das Team</h2>
+        <p class="section__description">Ein Mensch, viele Rollen. Solo Dev bedeutet: Game Design, Programming, Art Direction, Marketing, Community Management, Business – alles in einer Hand.</p>
+      </header>
+      
+      <article class="card animate-on-scroll" style="max-width: 720px; margin: 0 auto;">
+        <div class="card__content" style="display:flex;gap:2rem;align-items:flex-start;flex-wrap:wrap;">
+          <div style="flex:1;min-width:150px;text-align:center;">
+            <div style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--color-gold),var(--color-amethyst));margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-size:3rem;font-family:var(--font-heading);color:var(--color-bg-deep);font-weight:700;">G</div>
+            <h3 style="margin-bottom:.25rem;">Grimoire Dev</h3>
+            <p style="color:var(--color-ink-muted);font-size:.875rem;">Founder & Solo Developer</p>
+          </div>
+          <div style="flex:2;min-width:280px;">
+            <p style="margin-bottom:1rem;color:var(--color-ink-dim);">Nach Jahren in der Industrie (AAA, Mobile F2P, Indie) der Entschluss: Zurück zu den Wurzeln. Spiele machen, die <em>ich</em> spielen will. Ohne Publisher-Druck, ohne Metriken-Diktat, ohne Kompromisse bei der Fairness.</p>
+            <p style="margin-bottom:1rem;color:var(--color-ink-dim);">Diese Website, das Godot-Template, die Systeme – alles Open Source Gedanke. Die Community formt die Richtung. Discord ist das Büro.</p>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+              <a href="https://twitter.com/GrimoireInteractive" class="btn btn--secondary btn--sm" rel="noopener noreferrer">Twitter / X</a>
+              <a href="https://github.com/GrimoireInteractive" class="btn btn--secondary btn--sm" rel="noopener noreferrer">GitHub</a>
+              <a href="https://discord.gg/grimoireinteractive" class="btn btn--primary btn--sm" rel="noopener noreferrer">Discord</a>
+              <a href="mailto:contact@grimoire-interactive.de" class="btn btn--ghost btn--sm">E-Mail</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+  
+  <section class="cta-section animate-on-scroll" aria-labelledby="cta-about-title">
+    <div class="container cta-section__inner">
+      <h2 id="cta-about-title" class="cta-section__title">Neugierig geworden?</h2>
+      <p class="cta-section__text">Unser erstes Spiel <strong>Codex Arcanum</strong> befindet sich in aktiver Entwicklung. Begleite die Reise.</p>
+      <div class="cta-section__actions">
+        <a href="https://discord.gg/grimoireinteractive" class="btn btn--primary btn--lg" rel="noopener noreferrer">
+          <span class="btn__text">Discord beitreten</span>
+          <svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.443.747-.698 1.113a18.27 18.27 0 0 0-5.481 0c-.256-.365-.489-.737-.699-1.113a.077.077 0 0 0-.079-.037 19.736 19.736 0 0 0-4.885 1.515.061.061 0 0 0-.031.022c-.939 1.564-1.482 3.433-1.517 3.706a.068.068 0 0 0 .005.103l.055.043c.06.051 4.178 3.546 4.499 3.759.115.076.254.076.369 0 .34-.223 4.547-3.717 4.614-3.774l.055-.043a.068.068 0 0 0 .005-.103c-.043-.359-.614-2.336-1.608-3.99a.061.061 0 0 0-.031-.022zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333 1.007-2.419 2.2-2.419 1.167 0 2.157.967 2.157 2.301 0 1.21-.913 2.419-2.2 2.419zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333 1.007-2.419 2.2-2.419 1.167 0 2.157.967 2.157 2.301 0 1.21-.913 2.419-2.2 2.419z"/></svg>
+        </a>
+        <a href="https://twitter.com/GrimoireInteractive" class="btn btn--secondary btn--lg" rel="noopener noreferrer">
+          <span class="btn__text">Auf X folgen</span>
+          <svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 9.24-3.933.928-7.874-8.88-5.77 5.513 3.662.92 3.523-4.105-5.962-5.327L5.81 21.63 2.5 22.5l9.17-1.89-5.242-5.356 7.677-2.06 1.379-6.132h-3.383l2.48 3.096-5.352 4.102 5.818 5.052L21.5 21.75l-3.256-19.5h-3.308z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</BaseLayout>

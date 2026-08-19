@@ -1,0 +1,192 @@
+---
+// Base Layout
+// ===========
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  canonical?: string;
+  noIndex?: boolean;
+}
+
+const {
+  title,
+  description = 'Grimoire Interactive – Solo Game Dev Studio. Creators of Codex Arcanum: Idle RPG.',
+  ogImage = '/assets/og-default.webp',
+  ogType = 'website',
+  canonical,
+  noIndex = false
+} = Astro.props;
+
+const canonicalURL = canonical || Astro.site?.href || 'https://grimoire-interactive.de';
+const fullOGImage = new URL(ogImage, Astro.site).href;
+
+---
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content={Astro.generator}>
+  <meta name="theme-color" content="#0a080c" media="(prefers-color-scheme: dark)">
+  
+  <title>{title} | Grimoire Interactive</title>
+  <meta name="description" content={description}>
+  
+  {noIndex && <meta name="robots" content="noindex, nofollow">}
+  {canonical && <link rel="canonical" href={canonicalURL}>}
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content={ogType}>
+  <meta property="og:url" content={canonicalURL}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={fullOGImage}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Grimoire Interactive">
+  <meta property="og:locale" content="de_DE">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@GrimoireInteractive">
+  <meta name="twitter:creator" content="@GrimoireInteractive">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={fullOGImage}>
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Grimoire Interactive',
+    url: 'https://grimoire-interactive.de',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: { '@type': 'EntryPoint', urlTemplate: 'https://grimoire-interactive.de/search?q={search_term_string}' },
+      'query-input': 'required name=search_term_string'
+    }
+  }, null, 2)}></script>
+  
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
+  <!-- Fonts: Cinzel (Headings) + Inter (Body) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="/src/styles/index.scss">
+  
+  <!-- View Transitions (optional) -->
+  <meta name="view-transition" content="same-origin">
+</head>
+<body>
+  <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+  
+  <slot name="header" />
+  
+  <main id="main" role="main">
+    <slot />
+  </main>
+  
+  <slot name="footer" />
+  
+  <!-- Mobile Menu Overlay -->
+  <div class="header__overlay" id="header-overlay" aria-hidden="true"></div>
+  
+  <!-- Scripts -->
+  <script is:inline>
+    // Mobile Menu Toggle
+    const menuBtn = document.querySelector('.header__menu-btn');
+    const panel = document.querySelector('.header__panel');
+    const overlay = document.getElementById('header-overlay');
+    const closeBtn = document.querySelector('.header__panel-close');
+    const panelLinks = document.querySelectorAll('.header__panel-link');
+    
+    function openMenu() {
+      panel?.classList.add('is-open');
+      overlay?.classList.add('is-visible');
+      menuBtn?.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMenu() {
+      panel?.classList.remove('is-open');
+      overlay?.classList.remove('is-visible');
+      menuBtn?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    
+    menuBtn?.addEventListener('click', openMenu);
+    closeBtn?.addEventListener('click', closeMenu);
+    overlay?.addEventListener('click', closeMenu);
+    panelLinks.forEach(link => link.addEventListener('click', closeMenu));
+    
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && panel?.classList.contains('is-open')) {
+        closeMenu();
+      }
+    });
+    
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 20) {
+        header?.classList.add('header--scrolled');
+      } else {
+        header?.classList.remove('header--scrolled');
+      }
+      lastScroll = currentScroll;
+    }, { passive: true });
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          target.focus({ preventScroll: true });
+        }
+      });
+    });
+    
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -10% 0px',
+      threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

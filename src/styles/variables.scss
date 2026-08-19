@@ -1,0 +1,152 @@
+// Grimoire Interactive - Design Tokens
+// ====================================
+
+// Colors
+$color-bg-deep: #0a080c;
+$color-bg-dark: #120f15;
+$color-bg-card: #1a1620;
+$color-bg-elevated: #221d2b;
+
+$color-ink: #f0ebf5;
+$color-ink-dim: #b8b0c4;
+$color-ink-muted: #7a7288;
+
+$color-gold: #d4a843;
+$color-gold-light: #e8c56d;
+$color-gold-dark: #a6802e;
+
+$color-amethyst: #9b5de5;
+$color-amethyst-light: #c084fc;
+$color-amethyst-dark: #7c3aed;
+
+$color-emerald: #10b981;
+$color-ruby: #ef4444;
+$color-sapphire: #3b82f6;
+
+$color-border: #2d2638;
+$color-border-light: #3d344d;
+
+// Typography
+$font-heading: 'Cinzel', 'Georgia', serif;
+$font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+// Spacing
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$space-xl: 2rem;
+$space-2xl: 3rem;
+$space-3xl: 4rem;
+$space-4xl: 6rem;
+
+// Container
+$container-max: 1200px;
+$container-padding: $space-lg;
+
+// Border Radius
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+$radius-full: 9999px;
+
+// Transitions
+$transition-fast: 150ms ease;
+$transition-base: 250ms ease;
+$transition-slow: 400ms ease;
+
+// Shadows
+$shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+$shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+$shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
+$shadow-glow: 0 0 24px rgba(212, 168, 67, 0.15);
+$shadow-glow-strong: 0 0 48px rgba(212, 168, 67, 0.25);
+
+// Z-Indices
+$z-dropdown: 100;
+$z-sticky: 200;
+$z-modal: 300;
+$z-toast: 400;
+
+// Breakpoints
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+$bp-2xl: 1536px;
+
+// Media Query Mixins
+@mixin mq-sm {
+  @media (min-width: #{$bp-sm}) { @content; }
+}
+@mixin mq-md {
+  @media (min-width: #{$bp-md}) { @content; }
+}
+@mixin mq-lg {
+  @media (min-width: #{$bp-lg}) { @content; }
+}
+@mixin mq-xl {
+  @media (min-width: #{$bp-xl}) { @content; }
+}
+@mixin mq-2xl {
+  @media (min-width: #{$bp-2xl}) { @content; }
+}
+@mixin mq-max-sm {
+  @media (max-width: #{$bp-sm - 1px}) { @content; }
+}
+@mixin mq-max-md {
+  @media (max-width: #{$bp-md - 1px}) { @content; }
+}
+@mixin mq-max-lg {
+  @media (max-width: #{$bp-lg - 1px}) { @content; }
+}
+
+// Focus Styles
+%focus-visible {
+  outline: none;
+  &:focus-visible {
+    outline: 2px solid $color-gold;
+    outline-offset: 2px;
+  }
+}
+
+// Text Gradient
+@mixin text-gradient($from: $color-gold, $to: $color-amethyst) {
+  background: linear-gradient(135deg, $from, $to);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Card Base
+%card-base {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  transition: transform $transition-base, box-shadow $transition-base, border-color $transition-base;
+  &:hover {
+    border-color: $color-border-light;
+    box-shadow: $shadow-lg, $shadow-glow;
+    transform: translateY(-2px);
+  }
+}
+
+// Button Base
+%btn-base {
+  @extend %focus-visible;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-sm;
+  padding: $space-sm $space-xl;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: $radius-md;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all $transition-fast;
+  white-space: nowrap;
+}

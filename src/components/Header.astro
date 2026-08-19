@@ -1,0 +1,68 @@
+---
+// Header Component
+// ================
+---
+
+<header class="header" role="banner">
+  <div class="container header__inner">
+    <!-- Logo -->
+    <a href="/" class="header__logo" aria-label="Grimoire Interactive – Startseite">
+      <span class="header__logo-mark" aria-hidden="true">G</span>
+      <span class="header__logo-text">Grimoire Interactive</span>
+    </a>
+    
+    <!-- Desktop Navigation -->
+    <nav class="header__nav" aria-label="Hauptnavigation">
+      <a href="/" class="header__nav-link {Astro.url.pathname === '/' ? 'is-active' : ''}">Studio</a>
+      <a href="/codex-arcanum/" class="header__nav-link {Astro.url.pathname.startsWith('/codex-arcanum') ? 'is-active' : ''}">Codex Arcanum</a>
+      <a href="/about/" class="header__nav-link {Astro.url.pathname === '/about/' ? 'is-active' : ''}">Über uns</a>
+      <a href="/contact/" class="header__nav-link {Astro.url.pathname === '/contact/' ? 'is-active' : ''}">Kontakt</a>
+    </nav>
+    
+    <!-- Actions -->
+    <div class="header__actions">
+      <a href="/codex-arcanum/" class="btn btn--primary header__cta">
+        <span class="btn__text">Jetzt spielen</span>
+        <svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+      </a>
+      
+      <!-- Mobile Menu Button -->
+      <button class="header__menu-btn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Menu Panel -->
+  <div class="header__panel" id="mobile-menu" role="dialog" aria-label="Mobile Navigation" aria-modal="true">
+    <button class="header__panel-close" aria-label="Menü schließen">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    
+    <nav class="header__panel-nav" aria-label="Mobile Hauptnavigation">
+      <a href="/" class="header__panel-link {Astro.url.pathname === '/' ? 'is-active' : ''}">Studio</a>
+      <a href="/codex-arcanum/" class="header__panel-link {Astro.url.pathname.startsWith('/codex-arcanum') ? 'is-active' : ''}">Codex Arcanum</a>
+      <a href="/about/" class="header__panel-link {Astro.url.pathname === '/about/' ? 'is-active' : ''}">Über uns</a>
+      <a href="/contact/" class="header__panel-link {Astro.url.pathname === '/contact/' ? 'is-active' : ''}">Kontakt</a>
+    </nav>
+    
+    <div class="header__panel-actions">
+      <a href="/codex-arcanum/" class="btn btn--primary btn--lg" style="width: 100%; justify-content: center;">
+        <span class="btn__text">Codex Arcanum spielen</span>
+        <svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+      </a>
+      <a href="/contact/" class="btn btn--secondary btn--lg" style="width: 100%; justify-content: center;">Kontakt aufnehmen</a>
+    </div>
+  </div>
+</header>

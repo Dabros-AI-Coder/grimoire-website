@@ -1,0 +1,16 @@
+# Robots.txt for Grimoire Interactive
+# ===================================
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://grimoire-interactive.de/sitemap.xml
+
+# Disallow admin/private areas (none exist, but for completeness)
+Disallow: /api/
+Disallow: /_astro/
+Disallow: /node_modules/
+
+# Crawl-delay (be nice)
+Crawl-delay: 10

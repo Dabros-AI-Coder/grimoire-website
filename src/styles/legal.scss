@@ -1,0 +1,239 @@
+// Legal Pages Styles
+// ==================
+
+@use "variables" as *;
+
+.legal {
+  padding: $space-4xl 0 $space-3xl;
+  @include mq-max-md {
+    padding: $space-3xl 0 $space-2xl;
+  }
+}
+
+.legal__header {
+  text-align: center;
+  margin-bottom: $space-3xl;
+  @include mq-max-md {
+    margin-bottom: $space-2xl;
+  }
+}
+
+.legal__title {
+  @include text-gradient($color-ink, $color-gold);
+  margin-bottom: $space-md;
+}
+
+.legal__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $space-md;
+  font-size: 0.875rem;
+  color: $color-ink-muted;
+}
+
+.legal__content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: $space-2xl;
+  @include mq-max-md {
+    padding: $space-xl;
+  }
+}
+
+.legal__section {
+  margin-bottom: $space-2xl;
+  padding-bottom: $space-2xl;
+  border-bottom: 1px solid $color-border;
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.legal__section-title {
+  font-size: 1.25rem;
+  margin-bottom: $space-md;
+  color: $color-gold;
+}
+
+.legal__section-text {
+  color: $color-ink-dim;
+  line-height: 1.8;
+  margin-bottom: $space-lg;
+  &:last-child { margin-bottom: 0; }
+}
+
+.legal__list {
+  margin-left: $space-lg;
+  padding-left: $space-md;
+  border-left: 2px solid $color-border;
+  color: $color-ink-dim;
+  line-height: 1.8;
+}
+
+.legal__list-item {
+  margin-bottom: $space-md;
+  position: relative;
+  &:last-child { margin-bottom: 0; }
+  &::marker { color: $color-gold; }
+}
+
+.legal__contact-info {
+  background: $color-bg-elevated;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  padding: $space-lg;
+  margin-top: $space-lg;
+}
+
+.legal__contact-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: $color-gold;
+  margin-bottom: $space-md;
+}
+
+.legal__contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.legal__contact-item {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  font-size: 0.9375rem;
+  color: $color-ink-dim;
+}
+
+.legal__contact-label {
+  font-weight: 500;
+  color: $color-ink-muted;
+  min-width: 100px;
+}
+
+.legal__contact-value {
+  color: $color-ink;
+  word-break: break-word;
+}
+
+.legal__contact-link {
+  color: $color-gold;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+
+.legal__back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-sm;
+  margin-top: $space-xl;
+  padding-top: $space-lg;
+  border-top: 1px solid $color-border;
+  font-weight: 500;
+  color: $color-ink-dim;
+  &:hover { color: $color-gold; }
+}
+
+// Table for data processing
+.legal__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: $space-lg 0;
+  font-size: 0.9375rem;
+}
+
+.legal__table th,
+.legal__table td {
+  padding: $space-md;
+  text-align: left;
+  border-bottom: 1px solid $color-border;
+}
+
+.legal__table th {
+  font-weight: 600;
+  color: $color-gold;
+  background: $color-bg-elevated;
+}
+
+.legal__table tr:last-child td {
+  border-bottom: none;
+}
+
+.legal__table tbody tr:hover td {
+  background: $color-bg-elevated;
+}
+
+// Highlight boxes
+.legal__highlight {
+  background: rgba(212, 168, 67, 0.1);
+  border: 1px solid rgba(212, 168, 67, 0.3);
+  border-radius: $radius-md;
+  padding: $space-lg;
+  margin: $space-lg 0;
+  display: flex;
+  gap: $space-md;
+  align-items: flex-start;
+}
+
+.legal__highlight-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: $color-gold;
+  margin-top: 2px;
+}
+
+.legal__highlight-content {
+  flex: 1;
+  color: $color-ink-dim;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.legal__highlight-title {
+  font-weight: 600;
+  color: $color-gold;
+  margin-bottom: $space-xs;
+}
+
+// Cookie table
+.cookie-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin: $space-lg 0;
+}
+
+.cookie-table th,
+.cookie-table td {
+  padding: $space-sm $space-md;
+  text-align: left;
+  border-bottom: 1px solid $color-border;
+  vertical-align: top;
+}
+
+.cookie-table th {
+  font-weight: 600;
+  color: $color-gold;
+  background: $color-bg-elevated;
+  position: sticky;
+  top: 0;
+}
+
+.cookie-table td:first-child {
+  font-family: $font-mono;
+  font-size: 0.8125rem;
+  color: $color-gold;
+}
+
+.cookie-table tbody tr:hover td {
+  background: $color-bg-elevated;
+}
